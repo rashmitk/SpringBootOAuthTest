@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+security:
+  oauth2:
+    client:
+      client-id: safetynet
+      client-secret: safetynet
+      scope: read,write
+      auto-approve-scopes: '.*'
+
+facebook:
+  client:
+    clientId: 233668646673605
+    clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    redirect-uri: http://oauth-elb-59093457.us-east-1.elb.amazonaws.com/hello
+  resource:
+    userInfoUri: https://graph.facebook.com/me
+github:
+  client:
+    clientId: a650eef1b6aacd649ea8
+    clientSecret: 5737a32b5d5977db7b45b32555c40a0b85bdbb1f
+    accessTokenUri: https://github.com/login/oauth/access_token
+    userAuthorizationUri: https://github.com/login/oauth/authorize
+    redirect-uri: http://oauth-elb-59093457.us-east-1.elb.amazonaws.com/hello
+  resource:
+    userInfoUri: https://api.github.com/user
+
+logging:
+  level:
+    org.springframework.security: DEBUG

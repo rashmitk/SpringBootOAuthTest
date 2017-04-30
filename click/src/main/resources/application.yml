@@ -1,0 +1,14 @@
+server:
+  port: 8010
+
+security:
+  sessions: NEVER
+  oauth2:
+    client:
+      client-id: safetynet
+      client-secret: safetynet
+      access-token-uri: http://oauth-elb-59093457.us-east-1.elb.amazonaws.com:8080/oauth/token
+      user-authorization-uri: http://oauth-elb-59093457.us-east-1.elb.amazonaws.com:8080/oauth/authorize
+      grant-type: implicit
+    resource:
+      user-info-uri: http://oauth-elb-59093457.us-east-1.elb.amazonaws.com:8080/me
